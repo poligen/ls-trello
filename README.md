@@ -1,0 +1,3 @@
+ - before start run `npm install`
+ - use `npm run start` to start the server.
+ - the development mode is `npm run start-dev`

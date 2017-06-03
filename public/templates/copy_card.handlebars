@@ -1,0 +1,75 @@
+<h3>
+  Copy Card
+  <span class="close"><i class="material-icons md-16">close</i></span>
+</h3>
+<hr/>
+<form>
+  <dl class="card-name">
+    <dt>
+      <label>Title</label>
+    </dt>
+    <dd>
+      <textarea>{{title}}</textarea>
+    </dd>
+  </dl>
+  {{#if labelsComments}}
+  <dl class="labels-comments">
+    <dt>Keep...</dt>
+    {{#if labelsCount}}
+    <dd>
+      <label>
+        <input type="checkbox" name="labels">
+        Labels ({{labelsCount}})
+      </label>
+    </dd>
+    {{/if}}
+    {{#if commentsCount}}
+    <dd>
+      <label>
+        <input type="checkbox" name="comments">
+        Comments ({{commentsCount}})
+      </label>
+    </dd>
+    {{/if}}
+    </dd>
+  </dl>
+  {{/if}}
+  <dl class="list-name">
+    <dt>
+      <label>
+        <h5>List</h5>
+        <p data-id="{{currentList.attributes.id}}">{{currentList.attributes.name}}</p>
+      </label>
+    </dt>
+    <dd>
+      <select>
+        {{#if currentList}}
+        <option data-id="{{currentList.attributes.id}}" value="{{currentList.attributes.name}}" selected>{{currentList.attributes.name}} (current)</option>
+        {{/if}}
+        {{#each lists}}
+        <option data-id="{{id}}" value="{{attributes.name}}">{{attributes.name}}</option>
+        {{/each}}
+      </select>
+    </dd>
+  </dl>
+  <dl class="card-position">
+    <dt>
+      <label>
+        <h5>Position</h5>
+        <p>{{currentPosition}}</p>
+      </label>
+    </dt>
+    <dd>
+      <select>
+        {{#if currentPosition}}
+        <option value="{{currentPosition}}" selected>{{currentPosition}} (current)</option>
+        {{/if}}
+        {{#each positions}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </dd>
+  </dl>
+  <input type="submit" value="Create Card">
+</form>
+<div class="overlay"></div>

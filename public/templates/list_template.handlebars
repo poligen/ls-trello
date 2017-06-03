@@ -1,0 +1,27 @@
+<header>
+  <textarea class="title formated" rows="1" readonly>{{name}}</textarea>
+  <section class="list-icons">
+    <span class="subscribed"><i class="material-icons md-16">remove_red_eye</i></span>
+    <span class="more">
+      <i class="material-icons md-16">more_horiz</i>
+      <div class="list-action">
+      </div>
+    </span>
+  </section>
+</header>
+<section class="modal">
+</section>
+<ul class="cards">
+</ul>
+<div class="add-card">
+  <a href="#">Add a card...</a>
+  <form action="/cards" method="post">
+    <textarea rows="4" name="card_name"></textarea>
+    <div class="form-controls">
+      <input type="submit" value="Save">
+      <a class="close" href="#">
+        <i class="material-icons md-30">close</i>
+      </a>
+    </div>
+  </form>
+</div>

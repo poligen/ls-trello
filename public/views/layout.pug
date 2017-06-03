@@ -1,0 +1,46 @@
+include _mixins.pug
+
+doctype html
+html
+  head
+    title 299_Trello
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    +stylesheet_link_tag('application')
+  body
+    header
+      form
+        input(type="text")
+        span.search
+          i.material-icons search
+        span.close
+          i.material-icons close
+      h1 299_Trello
+      div#notif
+        a.notif-btn
+          i.material-icons notifications
+        section
+      section
+        .menu
+          i.material-icons.md-16 more_horiz
+          u Show Menu
+    section#menu.modal
+    section#search
+    main
+      .container
+        ul#lists.ui-sortable
+
+        .add-list
+          form(action="/lists" method="post")
+            label
+              input(type="text" placeholder="Add a list..." name="list_name")
+            div.form-controls
+              input(type="submit" value="Save")
+              a.close(href="#")
+                i.material-icons.md-30 close
+      #quick-edit
+      #card-details
+
+
+    block content
+    +script_include_tag('vendor')
+    +script_include_tag('app')

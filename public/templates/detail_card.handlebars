@@ -1,0 +1,87 @@
+<div class="overlay"></div>
+<div class="container">
+  <i class="material-icons md-30 close">close</i>
+  <div class="details">
+    <section class="name">
+      <header>
+        <i class="material-icons">web_asset</i>
+        <textarea class="title formated" rows="1">{{title}}</textarea>
+      </header>
+      <p>in list <a href="#">{{list.attributes.name}}</a></p>
+    </section>
+    <div class="attributes">
+      {{#if labels}}
+      <section class="labels">
+        <h3>Labels</h3>
+        <ul class="labels">
+        </ul>
+      </section>
+      {{/if}}
+      {{#if dueDate}}
+      <section class="date">
+        <h3>Due Date</h3>
+        <p><a class="due-date" href="#">{{format_detail dueDate}}</a></p>
+      </section>
+      {{/if}}
+      <section class="description">
+        {{#if description}}
+        <h3>Description</h3>
+        <a href="#"><span>Edit</span>
+          <p>{{description}}<p></a>
+            {{else}}
+            <a href="#"><i class="material-icons md-16">subject</i><span>Edit the description...</span></a>
+            {{/if}}
+            <form>
+              <textarea>{{description}}</textarea>
+              <div class="form-controls">
+                <input type="submit" value="Save">
+                <a class="close" href="#"><i class="material-icons md-30">close</i></a>
+              </div>
+            </form>
+      </section>
+    </div>
+    <section class="add-comment">
+      <header>
+        <i class="material-icons">comment</i>
+        <h1>Add Comment</h1>
+      </header>
+      <form action="/comments" method="post">
+        <textarea class="comment-content" placeholder="Write a comment..."></textarea>
+        <input type="submit" value="Send">
+      </form>
+    </section>
+    <section class="activity">
+      <header>
+        <i class="material-icons">list</i>
+        <h1>Activity</h1>
+      </header>
+      <ul class="activities">
+      </ul>
+    </section>
+  </div>
+  <aside>
+    <section class="add">
+      <h1>Add</h1>
+      <ul class="actions">
+        <li class="action labels"><i class="material-icons md-14">local_offer</i>Labels</li>
+        <li class="action due-date"><i class="material-icons md-14">access_time</i>Due Date</li>
+      </ul>
+    </section>
+    <section class="card-actions">
+      <h1>Actions</h1>
+      <ul class="actions">
+        <li class="action move-card"><i class="material-icons md-14">arrow_forward</i>Move</li>
+        <li class="action copy-card"><i class="material-icons md-14">web_asset</i>Copy</li>
+        <li class="action subscribe"><i class="material-icons md-14">remove_red_eye</i>
+          Subscribe
+          {{#if subscribed}}
+          <span><i class="material-icons md-18">check</i></span>
+          {{/if}}
+        </li>
+        <li class="action archive"><i class="material-icons md-14">archive</i>Archive</li>
+      </ul>
+    </section>
+  </aside>
+  <div id="show-action">
+  </div>
+</div>

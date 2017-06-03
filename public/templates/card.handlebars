@@ -1,0 +1,20 @@
+<li class="card-preview" data-id="{{id}}" data-position="{{position}}">
+  <span class="edit"><i class="material-icons md-14">edit</i></span>
+  <ul class="labels">
+  </ul>
+  <p>{{title}}</p>
+  <ul class="icons">
+    {{#if subscribed}}
+    <li><i class="material-icons md-14">remove_red_eye</i></li>
+    {{/if}}
+    {{#if dueDate}}
+    <li class="due-date"><i class="material-icons md-14">access_time</i>{{format_date dueDate}}</li>
+    {{/if}}
+    {{#if description}}
+    <li><i class="material-icons md-16">subject</i></li>
+    {{/if}}
+    {{#if commentsCount}}
+    <li><i class="material-icons md-14">comment</i> {{commentsCount}}</li>
+    {{/if}}
+  </ul>
+</li>

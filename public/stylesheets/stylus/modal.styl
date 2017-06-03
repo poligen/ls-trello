@@ -1,0 +1,268 @@
+.modal
+  display: none
+  position: absolute
+  border-radius: $radius.main
+  box-sizing: border-box
+  padding: 10px
+  background: white
+  border: 1px solid $colors.light-grey
+  z-index: 3
+  hr
+    border: none
+    border-bottom: 1px solid $colors.light-grey
+    margin: 10px auto
+  h3
+    text-align: center
+    font-weight: normal
+    color: $colors.darker-grey
+  + .overlay
+    display: none
+    z-index: 2
+
+.overlay
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+
+.close
+  margin: 0 10px 0 0
+  float: right
+  cursor: pointer
+  color: $colors.darker-grey
+  &:hover
+    color: $colors.light-black
+
+.prev
+  float: left
+  vertical-align: middle
+  cursor: pointer
+
+.search-results
+  position: fixed
+  display: block
+  top: 40px
+  left: 5px
+  min-width: 300px
+  padding: 20px
+  z-index: 2
+  background: $colors.lighter-grey
+  color: $colors.darker-grey
+  .overlay
+    z-index: -1
+    top: 40px
+  h1
+    color: $colors.light-black
+    margin: 0 0 20px 0
+    font-size: 18px
+  li
+    margin: 10px 0 0 0
+  h2
+    margin: 0 0 3px 0
+    i
+      margin: 0 5px 0 0
+      vertical-align: top
+      color: $colors.light-black
+  a
+    color: $colors.light-black
+    &:hover
+      color: black
+      text-decoration: underline
+
+.move
+  padding: 12px
+  label-select()
+  input[type="submit"]
+    submit-btn()
+
+.copy
+  padding: 12px
+  dl
+    margin: 0 0 15px 0
+    dt
+      margin: 0 0 15px 0
+    textarea
+      width: 95%
+      min-height: 60px
+      padding: 5px
+      border: 1px solid $colors.grey
+      &:focus
+        border: 1px solid $colors.blue
+        box-shadow: $shadows.all-sides-blue
+  input[type="submit"]
+    submit-btn()
+
+.move-all-cards
+  padding: 12px
+  .actions
+    .action
+      margin-left: -12px
+      margin-right: -12px
+      &:first-child
+        color: $colors.darker-grey
+        cursor: auto
+        &:hover
+          background: white
+          color: $colors.darker-grey
+
+.card-edit
+  .modal
+    position: fixed
+    display: inline-block
+    width: 275px
+    z-index: 8
+    background: white
+    color: $colors.light-black
+    form-controls()
+    .overlay
+      z-index: -1
+
+.due-date-form
+  form
+    fieldset
+      margin: 0 0 10px 0
+      label
+        box-sizing: border-box
+        display: inline-block
+        padding: 0 0 0 5px
+        width: 50%
+        &:last-child
+          input
+            width: 85%
+        input
+          width: 80%
+          modal-input()
+          &[type="time"]
+            font-family: Helvetica
+    .datepicker
+      margin: 0 0 15px 0
+      color: $colors.light-black
+      .ui-datepicker-inline
+        margin: 0 auto
+      .ui-corner-all
+        color: $colors.light-black
+      .ui-state-active
+        background: $colors.blue
+        border: 1px $colors.dark-blue
+      .ui-state-highlight
+        border: 1px solid $colors.grey
+        background: $colors.light-grey
+        color: $colors.light-black
+        font-weight: bold
+    .form-controls
+      input[type="submit"].remove
+        float: right
+        box-shadow: $shadows.bottom-light-black
+        background: $colors.grey-gradient-top
+        color: $colors.red
+        &:hover
+          color: white
+          background: $colors.red-gradient-bottom
+
+.labels-form
+  .label
+    display: inline-block
+    box-sizing: border-box
+    height: 35px
+    width: 210px
+    padding: 9px 0 0 9px
+    margin: 0 5px 5px 0
+    border-radius: $radius.main
+    color: white
+    font-weight: bold
+    font-size: 14px
+    cursor: pointer
+    transition: border-left 0s, width 0s, margin-left 0s
+    &:hover
+      width: 215px
+      margin-left: -5px
+      border-left: 8px solid rgba(0, 0, 0, 0.25)
+      transition: border-left 0.075s, width 0.075s, margin-left 0.075s
+    .check
+      padding-right: 8px
+      float: right
+      color: white
+  .edit
+    display: inline-block
+    box-sizing: border-box
+    width: 35px
+    height: 35px
+    padding: 10px
+    border-radius: $radius.main
+    vertical-align: top
+    color: $colors.grey
+    cursor: pointer
+    transition: background 0.25s, color 0.25s
+    &:hover
+      background: $colors.light-grey
+      color: $colors.light-black
+
+.edit-label-form
+  label
+    display: block
+    margin: 0 0 10px 0
+  input[type="text"]
+    width: 95%
+    modal-input()
+  input[type="submit"]
+    submit-btn()
+
+.card-edit
+  .copy
+    label-select()
+    .card-name, .labels-comments
+      background: none
+      border: none
+      cursor: auto
+      &:hover
+        background: none
+        border: none
+    .labels-comments
+      label
+        font-weight: normal
+        font-size: 14px
+      [type="checkbox"]
+        margin: 0 5px 0 0
+        vertical-align: middle
+
+#card-quick-edit
+  position: fixed
+  display: block
+  padding: 0
+  background: none
+  border none
+  > .overlay
+    background: rgba(0, 0, 0, 0.6)
+    z-index: -1
+  .container
+    display: inline-block
+    vertical-align: top
+  .card-preview
+    margin: 0 10px 10px 0
+    &:hover
+      background: white
+  textarea
+    width: 100%
+    &:focus
+      outline: none
+  input[type="submit"]
+    submit-btn()
+  aside
+    display: inline-block
+    .action
+      display: inline-block
+      color: white
+      padding: 7px
+      margin: 0 0 5px 0
+      border-radius: $radius.main
+      background: rgba(0, 0 , 0, 0.6)
+      transition: margin-left 0.1s
+      &:hover
+        margin-left: 10px
+        background: rgba(0, 0, 0, 0.85)
+      i
+        vertical-align: middle
+        margin: 0 5px 0 0
+  .modal
+    display: block

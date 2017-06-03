@@ -1,0 +1,15 @@
+  <h3>
+    Notifications
+    <span class="close"><i class="material-icons md-16">close</i></span>
+  </h3>
+  <hr>
+
+  {{#if items}}
+  <ul class="notifications">
+    {{#each items}}
+    {{> activities}}
+    {{/each}}
+  </ul>
+  {{else}}
+  <ul class="notifications empty">No Notifications</ul>
+  {{/if}}

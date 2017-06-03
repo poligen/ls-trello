@@ -1,0 +1,174 @@
+#card-details
+  > .overlay
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: rgba(0, 0, 0, 0.6)
+    z-index: 5
+  .container
+    position: absolute
+    z-index: 6
+    width: $widths.card-details
+    top: 50px
+    left: 50%
+    margin: 0 0 0 (-1 * $widths.card-details / 2 - 15)
+    padding: 20px 15px
+    border-radius: $radius.main
+    background: $colors.lighter-grey
+    color: $colors.darker-grey
+    > .close
+      position: absolute
+      float: none
+      top: 5px
+      right:0
+    .title, h1
+      display: inline-block
+      margin: 0 0 10px 0
+      font-size: 16px
+      color: $colors.light-black
+    .title
+      width: 93%
+      margin: 0 0 0 -5px
+  .details
+    display: inline-block
+    width: 560px
+    vertical-align: top
+    section
+      margin: 0 0 0 35px
+      header
+        margin: 0 0 0 -35px
+        .title
+          margin: none
+        i
+          margin: 0 7px 0 0
+          vertical-align: top
+      a
+        color: inherit
+      i
+        vertical-align: middle
+    .name
+      margin-bottom: 20px
+      header
+        > i
+          padding: 3px 0 0 0
+      p
+        a
+          text-decoration: underline
+    .attributes
+      section
+        display: inline-block
+        margin-bottom: 20px
+        vertical-align: top
+        h3
+          display: inline-block
+          margin: 0 0 10px 0
+          font-weight: normal
+      .labels
+        h3
+          margin: 0 0 5px 0          
+      .label
+        display: inline-block
+        box-sizing: border-box
+        height: 30px
+        min-width: 40px
+        padding: 6px 6px 0 6px
+        margin: 5px 2px 
+        border-radius: $radius.main
+        vertical-align: top
+        font-weight: bold
+        color: white
+        text-align: center
+        cursor: pointer
+      .date
+        .due-date
+          display: inline-block
+          padding: 5px
+          border: 1px
+          border-radius: $radius.main
+          background: $colors.light-grey
+          color: $colors.light-black
+          text-decoration: underline
+      .description
+        display: block
+        a
+          i
+            margin: 0 7px 0 0
+          span
+            text-decoration: underline
+          p
+            color: $colors.light-black
+        form
+          display: none
+          textarea
+            box-sizing: border-box
+            width: 100%
+            min-height: 110px
+            padding: 5px
+            border: 1px solid $colors.grey
+            box-shadow: $shadows.inside
+            background: $colors.lighter-grey
+            color: $colors.light-black
+            &:focus
+              outline: none
+          form-controls()
+    .add-comment
+      margin-bottom: 20px
+      input[type="submit"]
+        submit-btn()
+        display: block
+    .add-comment, .comment
+      textarea
+        width: 95%
+        min-height: 75px
+        padding: 10px
+        box-shadow: $shadows.bottom
+        color: $colors.light-black
+        &:focus
+          outline: none
+  .activities
+    activity-list()
+    .comment
+      form-controls()
+  aside
+    display: inline-block
+    width: 140px
+    margin: 40px 0 0 20px
+    section
+      margin: 20px 0
+      .actions
+        position: relative
+        .action
+          padding: 8px
+          border: 1px solid $colors.light-grey
+          border-bottom: 1px solid $colors.grey
+          border-radius: $radius.main
+          margin: 7px 0
+          background: $colors.white-gradient
+          color: $colors.light-black
+          font-size: 14px
+          font-weight: bold
+          cursor: pointer
+          i
+            margin: 0 5px 0 0
+            vertical-align: middle
+            color: $colors.darker-grey
+          &:hover
+            background: $colors.blue
+            border: 1px solid $colors.blue
+            border-bottom: 1px solid $colors.dark-blue
+            color: white
+            i
+              color: white
+        .subscribe
+          span
+            float: right
+            padding: 0 2px
+            border-radius: $radius.main
+            background: $colors.green-gradient-bottom
+            color: white
+            i
+              color: white
+              margin: 0
+              vertical-align: top

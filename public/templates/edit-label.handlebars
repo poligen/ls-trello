@@ -1,0 +1,20 @@
+<h3>
+  Labels
+  <span class="close"><i class="material-icons md-16">close</i></span>
+</h3>
+<hr/>
+<form>
+  <ul>
+    {{#each labels}}
+    <div>
+    <li class="label" data-id="{{id}}" style="background:{{attributes.color}};">
+      {{attributes.name}}
+      <!-- {{#if checked}} -->
+      <!-- <i class="material-icons md-18 check">check</i> -->
+      <!-- {{/if}} -->
+    </li><!--
+    --><span class="edit"><i class="material-icons md-14">edit</i></span>
+    </div>
+    {{/each}}
+  </ul>
+</form>

@@ -1,0 +1,1505 @@
+@import "whitespace-reset.css";
+input {
+  height: 16px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+a {
+  text-decoration: none;
+}
+p {
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: normal;
+}
+textarea {
+  border: none;
+  border-radius: 3px;
+  resize: none;
+  font: inherit;
+  color: inherit;
+}
+textarea.title {
+  box-sizing: border-box;
+  padding: 5px;
+  font-weight: bold;
+  transition: background 0.25s;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+textarea.title:focus {
+  background: #fff;
+  outline: none;
+}
+textarea.formated {
+  background: inherit;
+}
+.tilted {
+  transform: rotate(5deg);
+}
+.material-icons.md-14 {
+  font-size: 14px;
+}
+.material-icons.md-16 {
+  font-size: 16px;
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-30 {
+  font-size: 30px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+#lists {
+  float: left;
+  height: 100%;
+  white-space: nowrap;
+}
+.list {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 270px;
+  margin: 0 5px;
+  padding: 5px 8px;
+  border-radius: 3px;
+  background: #d6dadc;
+  color: #4d4d4d;
+  vertical-align: top;
+}
+.list header {
+  position: relative;
+  cursor: pointer;
+}
+.list .overlay-header {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+.list .title {
+  width: 200px;
+}
+.list .list-icons {
+  float: right;
+}
+.list .list-icons span {
+  display: inline-block;
+  color: #8c8c8c;
+}
+.list .list-icons .more {
+  padding: 5px 5px 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.list .list-icons .more:hover {
+  color: inherit;
+  background: #c4c9cc;
+}
+.list .list-icons .subscribed {
+  display: none;
+}
+.list .list-icons.is-subscribed .subscribed {
+  display: inline-block;
+}
+.list .modal {
+  top: 40px;
+  left: 240px;
+  width: 300px;
+  padding: 10px 0;
+  background: #fff;
+  color: #4d4d4d;
+}
+.list .modal hr {
+  width: 270px;
+}
+.list .modal .actions {
+  font-weight: bold;
+}
+.list .modal .actions .action {
+  padding: 7px 10px;
+  cursor: pointer;
+}
+.list .modal .actions .action:hover {
+  background: #0079bf;
+  color: #fff;
+}
+.sortable-list-placeholder {
+  background: #026aa7;
+  display: inline-block;
+  border-radius: 3px;
+}
+.cards {
+  min-height: 10px;
+}
+.card-preview {
+  box-sizing: border-box;
+  width: 254px;
+  padding: 7px;
+  margin: 5px 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  background: #fff;
+  cursor: pointer;
+}
+.card-preview .edit {
+  display: none;
+  float: right;
+  margin: -4px 0 0 0;
+  padding: 5px 5px 2px 5px;
+  border-radius: 3px;
+  color: #c4c9cc;
+  cursor: pointer;
+}
+.card-preview .edit:hover {
+  color: #4d4d4d;
+  background: #c4c9cc;
+}
+.card-preview:hover {
+  background: #edeff0;
+}
+.card-preview:hover .edit {
+  display: block;
+}
+.card-preview .labels {
+  overflow: hidden;
+  margin: 0 0 5px 0;
+  font-size: 10px;
+}
+.card-preview .label {
+  float: left;
+  height: 8px;
+  width: 35px;
+  margin: 2px;
+  border-radius: 3px;
+}
+.icons {
+  margin: 5px 0 0 0;
+}
+.icons li {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  font-size: 12px;
+  vertical-align: middle;
+  color: #8c8c8c;
+}
+.icons li i {
+  vertical-align: top;
+}
+.icons .due-date {
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #8c8c8c;
+  color: #fff;
+}
+.icons .due-date i {
+  margin: 0 5px 0 0;
+}
+.sortable-card-placeholder {
+  padding: 7px;
+  border-radius: 3px;
+  background: #a5acb0;
+}
+#card-details > .overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 5;
+}
+#card-details .container {
+  position: absolute;
+  z-index: 6;
+  width: 724px;
+  top: 50px;
+  left: 50%;
+  margin: 0 0 0 -377px;
+  padding: 20px 15px;
+  border-radius: 3px;
+  background: #edeff0;
+  color: #8c8c8c;
+}
+#card-details .container > .close {
+  position: absolute;
+  float: none;
+  top: 5px;
+  right: 0;
+}
+#card-details .container .title,
+#card-details .container h1 {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+#card-details .container .title {
+  width: 93%;
+  margin: 0 0 0 -5px;
+}
+#card-details .details {
+  display: inline-block;
+  width: 560px;
+  vertical-align: top;
+}
+#card-details .details section {
+  margin: 0 0 0 35px;
+}
+#card-details .details section header {
+  margin: 0 0 0 -35px;
+}
+#card-details .details section header .title {
+  margin: none;
+}
+#card-details .details section header i {
+  margin: 0 7px 0 0;
+  vertical-align: top;
+}
+#card-details .details section a {
+  color: inherit;
+}
+#card-details .details section i {
+  vertical-align: middle;
+}
+#card-details .details .name {
+  margin-bottom: 20px;
+}
+#card-details .details .name header > i {
+  padding: 3px 0 0 0;
+}
+#card-details .details .name p a {
+  text-decoration: underline;
+}
+#card-details .details .attributes section {
+  display: inline-block;
+  margin-bottom: 20px;
+  vertical-align: top;
+}
+#card-details .details .attributes section h3 {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+#card-details .details .attributes .labels h3 {
+  margin: 0 0 5px 0;
+}
+#card-details .details .attributes .label {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 30px;
+  min-width: 40px;
+  padding: 6px 6px 0 6px;
+  margin: 5px 2px;
+  border-radius: 3px;
+  vertical-align: top;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+#card-details .details .attributes .date .due-date {
+  display: inline-block;
+  padding: 5px;
+  border: 1px;
+  border-radius: 3px;
+  background: #d6dadc;
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+#card-details .details .attributes .description {
+  display: block;
+}
+#card-details .details .attributes .description a i {
+  margin: 0 7px 0 0;
+}
+#card-details .details .attributes .description a span {
+  text-decoration: underline;
+}
+#card-details .details .attributes .description a p {
+  color: #4d4d4d;
+}
+#card-details .details .attributes .description form {
+  display: none;
+}
+#card-details .details .attributes .description form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 110px;
+  padding: 5px;
+  border: 1px solid #c4c9cc;
+  box-shadow: inset 0 1px 8px rgba(0,0,0,0.15);
+  background: #edeff0;
+  color: #4d4d4d;
+}
+#card-details .details .attributes .description form textarea:focus {
+  outline: none;
+}
+#card-details .details .attributes .description form .form-controls {
+  display: block;
+  height: 35px;
+  overflow: hidden;
+  transition: height 0.25s;
+}
+#card-details .details .attributes .description form .form-controls input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#card-details .details .attributes .description form .form-controls input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+#card-details .details .attributes .description form .form-controls .close {
+  display: inline-block;
+  float: none;
+  margin: 0 0 0 5px;
+}
+#card-details .details .attributes .description form .form-controls .close:hover {
+  background: inherit;
+}
+#card-details .details .attributes .description form .form-controls .close i {
+  vertical-align: middle;
+}
+#card-details .details .add-comment {
+  margin-bottom: 20px;
+}
+#card-details .details .add-comment input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+}
+#card-details .details .add-comment input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+#card-details .details .add-comment textarea,
+#card-details .details .comment textarea {
+  width: 95%;
+  min-height: 75px;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: #4d4d4d;
+}
+#card-details .details .add-comment textarea:focus,
+#card-details .details .comment textarea:focus {
+  outline: none;
+}
+#card-details .activities {
+  color: #4d4d4d;
+  font-size: 14px;
+}
+#card-details .activities li {
+  padding: 10px 0;
+}
+#card-details .activities li + li {
+  border-top: 1px solid #d6dadc;
+}
+#card-details .activities section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+#card-details .activities section p {
+  display: inline;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+#card-details .activities section h3 {
+  display: inline-block;
+  vertical-align: top;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+#card-details .activities section h3 span {
+  font-weight: normal;
+}
+#card-details .activities section .card-name {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+#card-details .activities section .card-name:hover {
+  color: #000;
+}
+#card-details .activities footer {
+  display: inline-block;
+  margin: 0 0;
+  color: #8c8c8c;
+  font-size: 12px;
+}
+#card-details .activities .comment {
+  display: block;
+}
+#card-details .activities .comment h3 {
+  display: block;
+  text-align: left;
+}
+#card-details .activities .comment p {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+#card-details .activities .comment + footer {
+  display: block;
+}
+#card-details .activities .comment + footer a {
+  color: #8c8c8c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#card-details .activities .comment .form-controls {
+  display: block;
+  height: 35px;
+  overflow: hidden;
+  transition: height 0.25s;
+}
+#card-details .activities .comment .form-controls input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#card-details .activities .comment .form-controls input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+#card-details .activities .comment .form-controls .close {
+  display: inline-block;
+  float: none;
+  margin: 0 0 0 5px;
+}
+#card-details .activities .comment .form-controls .close:hover {
+  background: inherit;
+}
+#card-details .activities .comment .form-controls .close i {
+  vertical-align: middle;
+}
+#card-details aside {
+  display: inline-block;
+  width: 140px;
+  margin: 40px 0 0 20px;
+}
+#card-details aside section {
+  margin: 20px 0;
+}
+#card-details aside section .actions {
+  position: relative;
+}
+#card-details aside section .actions .action {
+  padding: 8px;
+  border: 1px solid #d6dadc;
+  border-bottom: 1px solid #c4c9cc;
+  border-radius: 3px;
+  margin: 7px 0;
+  background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%);
+  color: #4d4d4d;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#card-details aside section .actions .action i {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+  color: #8c8c8c;
+}
+#card-details aside section .actions .action:hover {
+  background: #0079bf;
+  border: 1px solid #0079bf;
+  border-bottom: 1px solid #026aa7;
+  color: #fff;
+}
+#card-details aside section .actions .action:hover i {
+  color: #fff;
+}
+#card-details aside section .actions .subscribe span {
+  float: right;
+  padding: 0 2px;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+}
+#card-details aside section .actions .subscribe span i {
+  color: #fff;
+  margin: 0;
+  vertical-align: top;
+}
+.modal {
+  display: none;
+  position: absolute;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #d6dadc;
+  z-index: 3;
+}
+.modal hr {
+  border: none;
+  border-bottom: 1px solid #d6dadc;
+  margin: 10px auto;
+}
+.modal h3 {
+  text-align: center;
+  font-weight: normal;
+  color: #8c8c8c;
+}
+.modal + .overlay {
+  display: none;
+  z-index: 2;
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.close {
+  margin: 0 10px 0 0;
+  float: right;
+  cursor: pointer;
+  color: #8c8c8c;
+}
+.close:hover {
+  color: #4d4d4d;
+}
+.prev {
+  float: left;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.search-results {
+  position: fixed;
+  display: block;
+  top: 40px;
+  left: 5px;
+  min-width: 300px;
+  padding: 20px;
+  z-index: 2;
+  background: #edeff0;
+  color: #8c8c8c;
+}
+.search-results .overlay {
+  z-index: -1;
+  top: 40px;
+}
+.search-results h1 {
+  color: #4d4d4d;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+}
+.search-results li {
+  margin: 10px 0 0 0;
+}
+.search-results h2 {
+  margin: 0 0 3px 0;
+}
+.search-results h2 i {
+  margin: 0 5px 0 0;
+  vertical-align: top;
+  color: #4d4d4d;
+}
+.search-results a {
+  color: #4d4d4d;
+}
+.search-results a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+.move {
+  padding: 12px;
+}
+.move dl {
+  position: relative;
+  margin: 0 0 15px 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  border: 1px solid #d6dadc;
+  border-bottom: 1px solid #c4c9cc;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%);
+  font-weight: bold;
+  cursor: pointer;
+}
+.move dl h5 {
+  margin: 0 0 7px 0;
+  color: #8c8c8c;
+  font-size: 12px;
+}
+.move dl p {
+  color: #4d4d4d;
+  font-size: 18px;
+}
+.move dl:hover {
+  border: 1px solid #0079bf;
+  border-bottom: 1px solid #026aa7;
+  background: #0079bf;
+}
+.move dl:hover h5 {
+  color: #edeff0;
+}
+.move dl:hover p {
+  color: #fff;
+}
+.move select {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+.move input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.move input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+.copy {
+  padding: 12px;
+}
+.copy dl {
+  margin: 0 0 15px 0;
+}
+.copy dl dt {
+  margin: 0 0 15px 0;
+}
+.copy dl textarea {
+  width: 95%;
+  min-height: 60px;
+  padding: 5px;
+  border: 1px solid #c4c9cc;
+}
+.copy dl textarea:focus {
+  border: 1px solid #0079bf;
+  box-shadow: 0 0 2px #0079bf;
+}
+.copy input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.copy input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+.move-all-cards {
+  padding: 12px;
+}
+.move-all-cards .actions .action {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.move-all-cards .actions .action:first-child {
+  color: #8c8c8c;
+  cursor: auto;
+}
+.move-all-cards .actions .action:first-child:hover {
+  background: #fff;
+  color: #8c8c8c;
+}
+.card-edit .modal {
+  position: fixed;
+  display: inline-block;
+  width: 275px;
+  z-index: 8;
+  background: #fff;
+  color: #4d4d4d;
+}
+.card-edit .modal .form-controls {
+  display: block;
+  height: 35px;
+  overflow: hidden;
+  transition: height 0.25s;
+}
+.card-edit .modal .form-controls input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.card-edit .modal .form-controls input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+.card-edit .modal .form-controls .close {
+  display: inline-block;
+  float: none;
+  margin: 0 0 0 5px;
+}
+.card-edit .modal .form-controls .close:hover {
+  background: inherit;
+}
+.card-edit .modal .form-controls .close i {
+  vertical-align: middle;
+}
+.card-edit .modal .overlay {
+  z-index: -1;
+}
+.due-date-form form fieldset {
+  margin: 0 0 10px 0;
+}
+.due-date-form form fieldset label {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 0 0 5px;
+  width: 50%;
+}
+.due-date-form form fieldset label:last-child input {
+  width: 85%;
+}
+.due-date-form form fieldset label input {
+  width: 80%;
+  padding: 5px;
+  margin: 5px 0 0 0;
+  border: 1px solid #c4c9cc;
+  box-shadow: inset 0 1px 8px rgba(0,0,0,0.15);
+  background: #edeff0;
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.due-date-form form fieldset label input:focus {
+  border: 1px solid #0079bf;
+  box-shadow: 0 0 2px #0079bf;
+  background: #fff;
+}
+.due-date-form form fieldset label input[type="time"] {
+  font-family: Helvetica;
+}
+.due-date-form form .datepicker {
+  margin: 0 0 15px 0;
+  color: #4d4d4d;
+}
+.due-date-form form .datepicker .ui-datepicker-inline {
+  margin: 0 auto;
+}
+.due-date-form form .datepicker .ui-corner-all {
+  color: #4d4d4d;
+}
+.due-date-form form .datepicker .ui-state-active {
+  background: #0079bf;
+  border: 1px #026aa7;
+}
+.due-date-form form .datepicker .ui-state-highlight {
+  border: 1px solid #c4c9cc;
+  background: #d6dadc;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+.due-date-form form .form-controls input[type="submit"].remove {
+  float: right;
+  box-shadow: 0 1px 0 #4d4d4d;
+  background: linear-gradient(to top, #d6dadc 0, #edeff0 100%);
+  color: #b04632;
+}
+.due-date-form form .form-controls input[type="submit"].remove:hover {
+  color: #fff;
+  background: linear-gradient(to bottom, #cf513d 0, #b04632 100%);
+}
+.labels-form .label {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 35px;
+  width: 210px;
+  padding: 9px 0 0 9px;
+  margin: 0 5px 5px 0;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-left 0s, width 0s, margin-left 0s;
+}
+.labels-form .label:hover {
+  width: 215px;
+  margin-left: -5px;
+  border-left: 8px solid rgba(0,0,0,0.25);
+  transition: border-left 0.075s, width 0.075s, margin-left 0.075s;
+}
+.labels-form .label .check {
+  padding-right: 8px;
+  float: right;
+  color: #fff;
+}
+.labels-form .edit {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+  border-radius: 3px;
+  vertical-align: top;
+  color: #c4c9cc;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.labels-form .edit:hover {
+  background: #d6dadc;
+  color: #4d4d4d;
+}
+.edit-label-form label {
+  display: block;
+  margin: 0 0 10px 0;
+}
+.edit-label-form input[type="text"] {
+  width: 95%;
+  padding: 5px;
+  margin: 5px 0 0 0;
+  border: 1px solid #c4c9cc;
+  box-shadow: inset 0 1px 8px rgba(0,0,0,0.15);
+  background: #edeff0;
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.edit-label-form input[type="text"]:focus {
+  border: 1px solid #0079bf;
+  box-shadow: 0 0 2px #0079bf;
+  background: #fff;
+}
+.edit-label-form input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.edit-label-form input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+.card-edit .copy dl {
+  position: relative;
+  margin: 0 0 15px 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  border: 1px solid #d6dadc;
+  border-bottom: 1px solid #c4c9cc;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #fff 0, #f8f9f9 100%);
+  font-weight: bold;
+  cursor: pointer;
+}
+.card-edit .copy dl h5 {
+  margin: 0 0 7px 0;
+  color: #8c8c8c;
+  font-size: 12px;
+}
+.card-edit .copy dl p {
+  color: #4d4d4d;
+  font-size: 18px;
+}
+.card-edit .copy dl:hover {
+  border: 1px solid #0079bf;
+  border-bottom: 1px solid #026aa7;
+  background: #0079bf;
+}
+.card-edit .copy dl:hover h5 {
+  color: #edeff0;
+}
+.card-edit .copy dl:hover p {
+  color: #fff;
+}
+.card-edit .copy select {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+.card-edit .copy .card-name,
+.card-edit .copy .labels-comments {
+  background: none;
+  border: none;
+  cursor: auto;
+}
+.card-edit .copy .card-name:hover,
+.card-edit .copy .labels-comments:hover {
+  background: none;
+  border: none;
+}
+.card-edit .copy .labels-comments label {
+  font-weight: normal;
+  font-size: 14px;
+}
+.card-edit .copy .labels-comments [type="checkbox"] {
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+}
+#card-quick-edit {
+  position: fixed;
+  display: block;
+  padding: 0;
+  background: none;
+  border: none;
+}
+#card-quick-edit > .overlay {
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+#card-quick-edit .container {
+  display: inline-block;
+  vertical-align: top;
+}
+#card-quick-edit .card-preview {
+  margin: 0 10px 10px 0;
+}
+#card-quick-edit .card-preview:hover {
+  background: #fff;
+}
+#card-quick-edit textarea {
+  width: 100%;
+}
+#card-quick-edit textarea:focus {
+  outline: none;
+}
+#card-quick-edit input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#card-quick-edit input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+#card-quick-edit aside {
+  display: inline-block;
+}
+#card-quick-edit aside .action {
+  display: inline-block;
+  color: #fff;
+  padding: 7px;
+  margin: 0 0 5px 0;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.6);
+  transition: margin-left 0.1s;
+}
+#card-quick-edit aside .action:hover {
+  margin-left: 10px;
+  background: rgba(0,0,0,0.85);
+}
+#card-quick-edit aside .action i {
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+#card-quick-edit .modal {
+  display: block;
+}
+body {
+  font: normal 14px Arial, Helvetica, sans-serif;
+  background: #0079bf;
+  min-width: 500px;
+}
+body > header {
+  box-sizing: border-box;
+  position: fixed;
+  height: 70px;
+  min-width: 720px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  padding: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  background: #026aa7;
+  text-align: center;
+  z-index: 1;
+}
+body > header form {
+  position: absolute;
+  left: 0;
+  padding: 0 0 0 5px;
+}
+body > header form input {
+  width: 180px;
+  background: #bcd9ea;
+  transition: width 0.25s;
+  opacity: 0.35;
+}
+body > header form input:hover {
+  opacity: 0.6;
+}
+body > header form input.focus {
+  width: 270px;
+  background: #fff;
+  opacity: 1;
+}
+body > header form input.focus ~ .search {
+  left: 255px;
+  z-index: -1;
+}
+body > header form input.focus ~ .close {
+  left: 255px;
+  opacity: 1;
+  color: #a5acb0;
+  cursor: pointer;
+  z-index: 2;
+}
+body > header form input.focus ~ .close:hover {
+  color: #8c8c8c;
+}
+body > header form span {
+  position: absolute;
+  display: inline-block;
+  left: 165px;
+  padding: 3px;
+  font-size: 16px;
+  transition: left 0.25s;
+}
+body > header form .search {
+  transform: rotate(90deg);
+  color: #fff;
+  cursor: pointer;
+}
+body > header form .close {
+  opacity: 0;
+  z-index: -1;
+}
+body > header h1 {
+  display: inline-block;
+  font: bold 25px Lobster, Serif;
+  opacity: 0.7;
+  color: #bcd9ea;
+}
+body > header h1:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+body > header section {
+  text-align: right;
+}
+body > header section .menu {
+  display: inline-block;
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: right;
+  color: #fff;
+  background: #0079bf;
+}
+body > header section .menu:hover {
+  background: #026aa7;
+}
+body > header section .menu i {
+  margin: 0 10px 0 0;
+  vertical-align: middle;
+}
+#notif {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  z-index: 10;
+}
+#notif .notif-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 2px 4px 3px 4px;
+  border-radius: 3px;
+  font-size: 18px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.2) 100%);
+  color: #fff;
+  cursor: pointer;
+}
+#notif .notif-btn i {
+  vertical-align: middle;
+}
+#notif .modal {
+  width: 450px;
+  max-height: 500px;
+  top: 35px;
+  right: 5px;
+  overflow: scroll;
+  background: #edeff0;
+  color: #8c8c8c;
+}
+#notif .modal hr {
+  width: 420px;
+}
+#notif .modal .notifications {
+  color: #4d4d4d;
+  font-size: 14px;
+}
+#notif .modal .notifications li {
+  padding: 10px 0;
+}
+#notif .modal .notifications li + li {
+  border-top: 1px solid #d6dadc;
+}
+#notif .modal .notifications section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+#notif .modal .notifications section p {
+  display: inline;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+#notif .modal .notifications section h3 {
+  display: inline-block;
+  vertical-align: top;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+#notif .modal .notifications section h3 span {
+  font-weight: normal;
+}
+#notif .modal .notifications section .card-name {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+#notif .modal .notifications section .card-name:hover {
+  color: #000;
+}
+#notif .modal .notifications footer {
+  display: inline-block;
+  margin: 0 0;
+  color: #8c8c8c;
+  font-size: 12px;
+}
+#notif .modal .notifications .comment {
+  display: block;
+}
+#notif .modal .notifications .comment h3 {
+  display: block;
+  text-align: left;
+}
+#notif .modal .notifications .comment p {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+#notif .modal .notifications .comment + footer {
+  display: block;
+}
+#notif .modal .notifications .comment + footer a {
+  color: #8c8c8c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#notif .modal .notifications.empty {
+  margin: 5px 0 0 0;
+  padding: 30px 0;
+  border: 1px dashed #8c8c8c;
+  border-radius: 3px;
+  background: #d6dadc;
+  color: #8c8c8c;
+  text-align: center;
+}
+#notif .modal .notifications li {
+  text-align: left;
+}
+#notif .modal .notifications section {
+  text-align: left;
+}
+main {
+  box-sizing: border-box;
+  margin: 70px 0 0 0;
+  padding: 10px;
+}
+main .container {
+  white-space: nowrap;
+}
+main .container .add-list {
+  display: inline-block;
+  width: 270px;
+  margin: 0 10px 0 5px;
+  padding: 5px;
+  border-radius: 3px;
+  background: #026aa7;
+  vertical-align: top;
+  transition: background 0.25s;
+}
+main .container .add-list form label {
+  display: block;
+  box-sizing: border-box;
+  width: 270px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+main .container .add-list form label input {
+  width: 100%;
+  background: inherit;
+  transition: background 0.25s;
+  font-size: 14px;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+main .container .add-list form label input::-webkit-input-placeholder {
+  color: #bcd9ea;
+  font-size: 14px;
+  transition: color 0.25s;
+}
+main .container .add-list form .form-controls {
+  display: block;
+  height: 35px;
+  overflow: hidden;
+  transition: height 0.25s;
+}
+main .container .add-list form .form-controls input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+main .container .add-list form .form-controls input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+main .container .add-list form .form-controls .close {
+  display: inline-block;
+  float: none;
+  margin: 0 0 0 5px;
+}
+main .container .add-list form .form-controls .close:hover {
+  background: inherit;
+}
+main .container .add-list form .form-controls .close i {
+  vertical-align: middle;
+}
+main .container .add-list form .form-controls {
+  height: 0;
+}
+main .container .add-list.show {
+  background: #d6dadc;
+  color: #4d4d4d;
+}
+main .container .add-list.show label {
+  display: block;
+  border: 1px solid #8c8c8c;
+  box-shadow: inset 0 1px 8px rgba(0,0,0,0.15);
+}
+main .container .add-list.show label input::-webkit-input-placeholder {
+  color: #8c8c8c;
+}
+main .container .add-list.show label + div {
+  height: 35px;
+  margin: 5px 0 0 0;
+}
+main .container .add-list.show label + div .material-icons {
+  font-size: 24px;
+}
+.add-card a {
+  display: block;
+  box-sizing: border-box;
+  height: 30px;
+  padding: 5px 0 0 2px;
+  border-radius: 3px;
+  color: #8c8c8c;
+  cursor: pointer;
+}
+.add-card a:hover {
+  text-decoration: underline;
+  color: #4d4d4d;
+  background: #c4c9cc;
+}
+.add-card a + form {
+  display: none;
+}
+.add-card form {
+  display: block;
+}
+.add-card form textarea {
+  box-sizing: border-box;
+  width: 254px;
+  padding: 5px;
+}
+.add-card form textarea:focus {
+  outline: none;
+}
+.add-card form .form-controls {
+  display: block;
+  height: 35px;
+  overflow: hidden;
+  transition: height 0.25s;
+}
+.add-card form .form-controls input[type="submit"] {
+  padding: 0 20px;
+  min-height: 30px;
+  box-shadow: 0 1px 0 #3f6f21;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.add-card form .form-controls input[type="submit"]:hover {
+  background: linear-gradient(to top, #61bd4f 0, #5aac44 100%);
+}
+.add-card form .form-controls .close {
+  display: inline-block;
+  float: none;
+  margin: 0 0 0 5px;
+}
+.add-card form .form-controls .close:hover {
+  background: inherit;
+}
+.add-card form .form-controls .close i {
+  vertical-align: middle;
+}
+#menu {
+  display: block;
+  position: fixed;
+  overflow: scroll;
+  top: 40px;
+  bottom: 0;
+  right: -999px;
+  width: 350px;
+  z-index: 1;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+  border: none;
+  border-radius: 0;
+  background: #edeff0;
+  color: #4d4d4d;
+}
+#menu h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+#menu header {
+  border-radius: 3px;
+  padding: 5px;
+}
+#menu header h2 {
+  display: inline-block;
+}
+#menu header i {
+  vertical-align: middle;
+  color: #8c8c8c;
+}
+#menu header:hover {
+  background: #d6dadc;
+}
+#menu header:hover h2 {
+  color: #000;
+}
+#menu header:hover i {
+  color: #4d4d4d;
+}
+#menu .activities {
+  color: #4d4d4d;
+  font-size: 14px;
+}
+#menu .activities li {
+  padding: 10px 0;
+}
+#menu .activities li + li {
+  border-top: 1px solid #d6dadc;
+}
+#menu .activities section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+#menu .activities section p {
+  display: inline;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+#menu .activities section h3 {
+  display: inline-block;
+  vertical-align: top;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+#menu .activities section h3 span {
+  font-weight: normal;
+}
+#menu .activities section .card-name {
+  color: #4d4d4d;
+  text-decoration: underline;
+}
+#menu .activities section .card-name:hover {
+  color: #000;
+}
+#menu .activities footer {
+  display: inline-block;
+  margin: 0 0;
+  color: #8c8c8c;
+  font-size: 12px;
+}
+#menu .activities .comment {
+  display: block;
+}
+#menu .activities .comment h3 {
+  display: block;
+  text-align: left;
+}
+#menu .activities .comment p {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+#menu .activities .comment + footer {
+  display: block;
+}
+#menu .activities .comment + footer a {
+  color: #8c8c8c;
+  text-decoration: underline;
+  cursor: pointer;
+}

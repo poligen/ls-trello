@@ -1,0 +1,60 @@
+{{#with add}}
+<li>
+  <section>
+    <h3>User</h3>
+    <p>added <span class="card-name">{{cardName}}</span> to {{listName}}</p>
+  </section>
+  <footer>{{date}}</footer>
+</li>
+{{/with}}
+
+{{#with change_due}}
+<li>
+  <section>
+    <h3>User</h3>
+    <p>changed the due date of <span class="card-name">{{cardName}}</span> to {{due}}</p>
+  </section>
+  <footer>{{date}}</footer>
+</li>
+{{/with}}
+
+{{#with remove_due}}
+<li>
+  <section>
+    <h3>User</h3>
+    <p>removed the due date from <span class="card-name">{{cardName}}</span></p>
+  </section>
+  <footer>{{date}}</footer>
+</li>
+{{/with}}
+
+
+{{#with archive}}
+<li>
+  <section>
+    <h3>User</h3>
+    <p>archived <span class="card-name">{{cardName}}</span></p>
+  </section>
+  <footer>{{date}}</footer>
+</li>
+{{/with}}
+
+{{#with move}}
+<li>
+  <section>
+    <h3>User</h3>
+    <p>moved <span class="card-name">{{cardName}}</span> from {{originList}} to {{targetList}}</p>
+  </section>
+  <footer>{{date}}</footer>
+</li>
+{{/with}}
+
+{{#with copy}}
+<li>
+  <section>
+    <h3>User</h3>
+    <p>copied <span class="card-name">{{targetTitle}}</span> from  <span class="card-name">{{originTitle}}</span> in list {{listName}}</p>
+  </section>
+  <footer>{{date}}</footer>
+</li>
+{{/with}}

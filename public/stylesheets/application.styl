@@ -1,0 +1,244 @@
+@import "whitespace-reset.css"
+@import "stylus/_mixins"
+@import "stylus/components"
+@import "stylus/list"
+@import "stylus/cards"
+@import "stylus/card_details"
+@import "stylus/modal"
+
+body
+  font: normal 14px  Arial, Helvetica, sans-serif
+  background: $colors.blue
+  min-width: 500px
+  > header
+    box-sizing: border-box
+    position: fixed
+    height: 70px
+    min-width: 720px
+    top: 0
+    left: 0
+    right: 0
+    height: $heights.header
+    padding: 5px
+    box-shadow: $shadows.bottom
+    background: $colors.dark-blue
+    text-align: center
+    z-index: 1
+    form
+      position: absolute
+      left: 0
+      padding: 0 0 0 5px
+      input
+        width: $widths.short-input
+        background: $colors.light-blue
+        transition: width 0.25s
+        opacity: 0.35
+        &:hover
+          opacity: 0.6
+        &.focus
+          width: $widths.input
+          background: white
+          opacity: 1
+          ~ .search
+            left: $widths.input - 15
+            z-index: -1
+          ~ .close
+            left: $widths.input - 15
+            opacity: 1
+            color: $colors.dark-grey
+            cursor: pointer
+            z-index: 2
+            &:hover
+              color: $colors.darker-grey
+      span
+        position: absolute
+        display: inline-block
+        left: $widths.short-input - 15
+        padding: 3px
+        font-size: 16px
+        transition: left 0.25s
+      .search
+        transform: rotate(90deg)
+        color: white
+        cursor: pointer
+      .close
+        opacity: 0
+        z-index: -1
+    h1
+      display: inline-block
+      font: bold 25px Lobster, Serif
+      opacity: 0.7
+      color: $colors.light-blue
+      &:hover
+        opacity: 1
+        cursor: pointer
+    section
+      text-align: right
+      .menu
+        display: inline-block
+        margin: 10px 0 0 0
+        padding: 5px 10px
+        border-radius: $radius.main
+        font-size: 12px
+        cursor: pointer
+        text-align: right
+        color: white
+        background: $colors.blue
+        &:hover
+          background: $colors.dark-blue
+        i
+          margin: 0 10px 0 0
+          vertical-align: middle
+
+#notif
+  position: absolute
+  top: 7px
+  right: 10px
+  z-index: 10
+  .notif-btn
+    display: inline-block
+    box-sizing: border-box
+    padding: 2px 4px 3px 4px
+    border-radius: $radius.main
+    font-size: 18px
+    background: $colors.light-blue-gradient-bottom
+    color: white
+    cursor: pointer
+    i
+      vertical-align: middle
+  .modal
+    width: 450px
+    max-height: 500px
+    top: 35px
+    right: 5px
+    overflow: scroll
+    background: $colors.lighter-grey
+    color: $colors.darker-grey
+    hr
+      width: 450px - 30
+    .notifications
+      activity-list()
+      &.empty
+        margin: 5px 0 0 0
+        padding: 30px 0
+        border: 1px dashed $colors.darker-grey
+        border-radius: $radius.main
+        background: $colors.light-grey
+        color: $colors.darker-grey
+        text-align: center
+      li
+        text-align: left
+      section
+        text-align: left
+
+main
+  box-sizing: border-box
+  margin: 70px 0 0 0
+  padding: 10px
+  .container
+    white-space: nowrap;
+    .add-list
+      display: inline-block
+      width: $widths.list
+      margin: 0 10px 0 5px
+      padding: 5px
+      border-radius: $radius.main
+      background: $colors.dark-blue
+      vertical-align: top
+      transition: background 0.25s
+      form
+        label
+          display: block
+          box-sizing: border-box
+          width: $widths.list
+          border-radius: $radius.main
+          cursor: pointer
+          input
+            width: 100%
+            background: inherit
+            transition: background 0.25s
+            font-size: 14px
+            color: $colors.light-black
+            cursor: pointer
+            &::-webkit-input-placeholder
+              color: $colors.light-blue
+              font-size: 14px
+              transition: color 0.25s
+        form-controls()
+        .form-controls
+          height: 0
+      &.show
+        background: $colors.light-grey
+        color: $colors.light-black
+        label
+          display: block
+          border: 1px solid $colors.darker-grey
+          box-shadow: $shadows.inside
+          input
+            &::-webkit-input-placeholder
+              color: $colors.darker-grey
+          + div
+            height: 35px
+            margin: 5px 0 0 0
+            .material-icons
+              font-size: 24px
+
+.add-card
+  a
+    display: block
+    box-sizing: border-box
+    height: 30px
+    padding: 5px 0 0 2px
+    border-radius: $radius.main
+    color: $colors.darker-grey
+    cursor: pointer
+    &:hover
+      text-decoration: underline
+      color: $colors.light-black
+      background: $colors.grey
+    + form
+      display: none
+  form
+    display: block
+    textarea
+      box-sizing: border-box
+      width: $widths.list - 16
+      padding: 5px;
+      &:focus
+        outline: none
+    form-controls()
+
+#menu
+  display: block
+  position: fixed
+  overflow: scroll
+  top: 40px
+  bottom: 0
+  right: -999px
+  width: 350px
+  z-index: 1
+  box-shadow: $shadows.left
+  border: none
+  border-radius: 0
+  background: $colors.lighter-grey
+  color: $colors.light-black
+  h1
+    text-align: center
+    font-weight: bold
+    font-size: 16px
+  header
+    border-radius: $radius.main
+    padding: 5px
+    h2
+      display: inline-block
+    i
+      vertical-align: middle
+      color: $colors.darker-grey
+    &:hover
+      background: $colors.light-grey
+      h2
+        color: black
+      i
+        color: $colors.light-black
+  .activities
+    activity-list()
